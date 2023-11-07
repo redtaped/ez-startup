@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace App.Models
+namespace App
 {
     public class WindowsEzStartup : IEzStartup
     {
@@ -16,12 +16,7 @@ namespace App.Models
 
         public void Launch()
         {
-            try{
-                Process.Start(this.startInfo);
-            }
-            catch{
-                Console.WriteLine("Failed to Launch Application");
-            }
+           Process.Start(this.startInfo);
         }
     }
 }
