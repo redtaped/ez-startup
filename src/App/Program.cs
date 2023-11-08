@@ -9,10 +9,11 @@ using Microsoft.Extensions.Logging;
 HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
 
 // add dependencies
-builder.Services.AddBusinessLogic();    // wires up all logic classes, such as IEzStartup
-builder.Services.AddLogging(o => {      // wires up ILogger<T> to use logging in our code
-    o.AddConsole();                     // setsup logger to do console logs by default. later we can change this to event log or a file
-});         
+builder.Services
+    .AddBusinessLogic()     // wires up all logic classes, such as IEzStartup
+    .AddLogging(o => {      // wires up ILogger<T> to use logging in our code
+        o.AddConsole();     // setsup logger to do console logs by default. later we can change this to event log or a file
+    });     
 
 // build all dependencies and create a host to rul our application
 using IHost host = builder.Build();
