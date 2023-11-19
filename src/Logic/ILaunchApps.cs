@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EzStartup.Common;
 
-public interface IEzStartup
+public interface ILaunchApps
 {
     void Launch(string fileName, string arguments);
 }

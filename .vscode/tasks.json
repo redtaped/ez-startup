@@ -9,7 +9,7 @@
             "type": "shell",
             "args": [
                 "build",
-                // Ask dotnet build to generate full paths for file names.
+                 // Ask dotnet build to generate full paths for file names.
                 "/property:GenerateFullPaths=true",
                 // Do not generate summary otherwise it leads to duplicate errors in Problems panel
                 "/consoleloggerparameters:NoSummary"
@@ -19,6 +19,46 @@
                 "reveal": "silent"
             },
             "problemMatcher": "$msCompile"
-        }
+        },
+        {
+            "label": "publish mac",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "publish",
+                "-r",
+                "osx-arm64",
+                "--self-contained",
+                 // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish windows",
+            "command": "dotnet",
+            "type": "shell",
+            "args": [
+                "publish",
+                "-r",
+                "win-x64",
+                "--self-contained",
+                 // Ask dotnet build to generate full paths for file names.
+                "/property:GenerateFullPaths=true",
+                // Do not generate summary otherwise it leads to duplicate errors in Problems panel
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": "$msCompile"
+        },
     ]
 }

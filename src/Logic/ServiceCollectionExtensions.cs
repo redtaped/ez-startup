@@ -7,6 +7,8 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddBusinessLogic(this IServiceCollection serviceCollection)
     {
-        return serviceCollection.AddScoped<IEzStartup, WindowsEzStartup>();
+        return serviceCollection
+                .AddScoped<ILoader, Loader>()
+                .AddScoped<ILaunchApps, AppLauncher>();
     }
 }
