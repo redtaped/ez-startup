@@ -13,13 +13,15 @@ internal class AppLauncher : ILaunchApps
         this._logger = logger;
     }
 
-    public void Launch(string fileName, string arguments)
+    public void Launch(string fileName, string arguments, string? workingDirectory = null)
     {
         _logger.LogInformation("Opening {FileName}", fileName); // this is using structured logging ref: https://github.com/NLog/NLog/wiki/How-to-use-structured-logging
         
         Process.Start(new ProcessStartInfo{
             FileName = fileName,
-            Arguments = arguments
+            Arguments = arguments,
+            UseShellExecute = false,
+            WorkingDirectory = workingDirectory 
         });
     }
 }

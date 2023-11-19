@@ -48,6 +48,7 @@
             "command": "dotnet",
             "type": "shell",
             "args": [
+                "publish",
                 "${workspaceFolder}/src/App/App.csproj",
                 "-r",
                 "win-x64",

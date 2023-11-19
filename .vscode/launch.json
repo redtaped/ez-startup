@@ -8,7 +8,7 @@
             "name": "C#: App Debug",
             "type": "dotnet",
             "request": "launch",
-            "projectPath": "${workspaceFolder}/src/App/App.csproj"
+            "projectPath": "${workspaceFolder}\\src\\App\\App.csproj"
         }
 
     ]

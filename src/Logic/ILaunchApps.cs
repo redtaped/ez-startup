@@ -7,5 +7,5 @@ namespace EzStartup.Common;
 
 public interface ILaunchApps
 {
-    void Launch(string fileName, string arguments);
+    void Launch(string fileName, string arguments, string? workingDirectory = null);
 }
