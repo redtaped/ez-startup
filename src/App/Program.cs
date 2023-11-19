@@ -18,9 +18,10 @@ builder.Services
         o.AddConsole();                                 // setsup logger to do console logs by default. later we can change this to event log or a file
     });     
 
-builder.Configuration                                   // load the configuration for the running operating system
+builder.Configuration                                                           // load the configuration for the running operating system
     .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
-    .AddJsonFile($"appsettings.{RuntimeInformation.RuntimeIdentifier}.json"); 
+    .AddJsonFile("appsettings.json")                                            // this should be done by default however on mac it loads from the profile directory and I don't know how to fix
+    .AddJsonFile($"appsettings.{RuntimeInformation.RuntimeIdentifier}.json");   // this layers on additional configuration data
 
 // build all dependencies and create a host to rul our application
 using IHost host = builder.Build();
