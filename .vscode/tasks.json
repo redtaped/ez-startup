@@ -26,9 +26,12 @@
             "type": "shell",
             "args": [
                 "publish",
+                "${workspaceFolder}/src/App/App.csproj",
                 "-r",
                 "osx-arm64",
                 "--self-contained",
+                "--output",
+                "${workspaceFolder}/release/osx-arm64",
                  // Ask dotnet build to generate full paths for file names.
                 "/property:GenerateFullPaths=true",
                 // Do not generate summary otherwise it leads to duplicate errors in Problems panel
@@ -45,10 +48,12 @@
             "command": "dotnet",
             "type": "shell",
             "args": [
-                "publish",
+                "${workspaceFolder}/src/App/App.csproj",
                 "-r",
                 "win-x64",
                 "--self-contained",
+                "--output",
+                "${workspaceFolder}/release/win-x64",
                  // Ask dotnet build to generate full paths for file names.
                 "/property:GenerateFullPaths=true",
                 // Do not generate summary otherwise it leads to duplicate errors in Problems panel
