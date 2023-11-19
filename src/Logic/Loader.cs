@@ -4,7 +4,7 @@ using Microsoft.Extensions.Options;
 
 internal class Loader : ILoader
 {
-    public Loader(IOptionsSnapshot<Configuration> configurationOptions, IEzStartup ezStartup, ILogger<Loader> logger)
+    public Loader(IOptionsSnapshot<Configuration> configurationOptions, ILaunchApps ezStartup, ILogger<Loader> logger)
     {
         _configuration = configurationOptions.Value;
         _startup = ezStartup;
@@ -12,7 +12,7 @@ internal class Loader : ILoader
     }
 
     private Configuration _configuration;
-    private IEzStartup _startup;
+    private ILaunchApps _startup;
     private readonly ILogger<Loader> _logger;
 
     public void Start()

@@ -4,11 +4,11 @@ using Microsoft.Extensions.Logging;
 
 namespace EzStartup.Logic;
 
-internal class WindowsEzStartup : IEzStartup
+internal class AppLauncher : ILaunchApps
 {
-    private readonly ILogger<WindowsEzStartup> _logger;
+    private readonly ILogger<AppLauncher> _logger;
 
-    public WindowsEzStartup(ILogger<WindowsEzStartup> logger)
+    public AppLauncher(ILogger<AppLauncher> logger)
     {
         this._logger = logger;
     }

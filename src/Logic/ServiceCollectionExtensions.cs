@@ -9,6 +9,6 @@ public static class ServiceCollectionExtensions
     {
         return serviceCollection
                 .AddScoped<ILoader, Loader>()
-                .AddScoped<IEzStartup, WindowsEzStartup>();
+                .AddScoped<ILaunchApps, AppLauncher>();
     }
 }

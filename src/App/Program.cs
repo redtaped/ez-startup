@@ -19,7 +19,7 @@ builder.Services
     });     
 
 builder.Configuration                                                           // load the configuration for the running operating system
-    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)                         // establishes the base path for subsequent configuration files
     .AddJsonFile("appsettings.json")                                            // this should be done by default however on mac it loads from the profile directory and I don't know how to fix
     .AddJsonFile($"appsettings.{RuntimeInformation.RuntimeIdentifier}.json");   // this layers on additional configuration data
 
