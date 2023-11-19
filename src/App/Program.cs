@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using Common.Models;
 using EzStartup.Common;
 using EzStartup.Logic;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,7 +26,16 @@ using IServiceScope scope = host.Services.CreateScope();
 // grab the entry point to the business logic and invoke it
 // we may change this later to be cleaner, but this is the syntax
 var startup = scope.ServiceProvider.GetRequiredService<IEzStartup>();
-startup.Launch("explorer.exe", $"shell:AppsFolder\\WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e!App");
+startup.LaunchMany(new List<WindowsStartupApp>(){
+    new WindowsStartupApp(){
+        AppName = "JW Library",
+        AppId = "WatchtowerBibleandTractSo.45909CDBADF3C_5rz59y55nfz3e!App"
+    },
+    new WindowsStartupApp(){
+        AppName = "OBS Studio (64bit)",
+        AppId = @"{6D809377-6AF0-444B-8957-A3773F02200E}\obs-studio\bin\64bit\obs64.exe"
+    }
+});
 
 // https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection-usage
 await host.RunAsync();
