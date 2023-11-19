@@ -24,7 +24,9 @@ internal class Loader : ILoader
         {
             _logger.LogInformation("Opening {AppName} from configuration", appKey);
 
-            _startup.Launch(_configuration.Launch[appKey].FileName, _configuration.Launch[appKey].Arguments);
+            _startup.Launch(_configuration.Launch[appKey].FileName, 
+                            _configuration.Launch[appKey].Arguments,
+                            _configuration.Launch[appKey].WorkingDirectory);
         }
     }
 }
