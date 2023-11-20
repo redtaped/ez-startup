@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EzStartup.Common;
+namespace EzStartup.Logic;
 
 public interface ILaunchApps
 {
-    void Launch(string fileName, string arguments, string? workingDirectory = null);
+    Process Launch(string fileName, string arguments, string? workingDirectory = null);
 }
