@@ -39,8 +39,8 @@ internal class Loader : ILoader
                 var process = _startup.Launch(launch.FileName, 
                                 launch.Arguments,
                                 launch.WorkingDirectory);
-                
-                if (launch.Settings != null) 
+
+                if (launch.Settings != null)
                     _windowsPositioner.Position(
                             process,
                             launch.Settings.PositionX, 
