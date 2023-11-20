@@ -21,9 +21,9 @@ namespace Logic
         {
             _logger.LogInformation("Positioning {ProcessName} at X:{PositionX} Y:{PositionY} W:{SizeX} H:{SizeY}",process.ProcessName,positionX,positionY,sizeX,sizeY);
             
-            IntPtr handle = process.Handle;
+            IntPtr handle = process.MainWindowHandle;
             var didwork = MoveWindow(handle,positionX,positionY,sizeX,sizeY,true);
-            
+
             _logger.LogInformation(didwork? "Process was positioned." : "Process failed to be positoned");
         }
         
