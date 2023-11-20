@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Runtime.InteropServices;
-using EzStartup.Common;
+using EzStartup.Common.Models;
 using EzStartup.Logic;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
